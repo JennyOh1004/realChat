@@ -1,12 +1,9 @@
-<br />
-<div class="row">
 <div class="booyah-box col-10 offset-1">
-<h1>
-	Editing room <%= @chat.name %>
-</h1>
-<br />
+  <h1>Edit Your Chat</h1>
+  <%= simple_form_for @chat do |f| %>
+    <%= f.input :name %>
 
-<%= render partial: 'form' %>
-
-</div>
+    <br />
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+  <% end %>
 </div>

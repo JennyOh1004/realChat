@@ -3,7 +3,6 @@ class CreateChats < ActiveRecord::Migration[5.2]
     create_table :chats do |t|
 
       t.string :name
-      t.text :description
       t.timestamps
     end
   end

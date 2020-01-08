@@ -1,32 +1,14 @@
 <br />
 <div class="row">
-<div class="booyah-box col-12 col-md-3 offset-1">
-	<br />
-	<div class="mb-3">
-		<%= link_to new_chat_path, class: 'btn btn-dark button' do %>
-		Create a room
-		<% end %>
-	</div>
-
-	<% if @chats.present? %>
-	<nav class="nav flex-column">
-		<% @chats.each do |chat| %>
-		<%= link_to chat.name, chat_path(chat), class: 'nav-link room-nav-link' %>
-	<% end %>
-	<% else %>
-	<div class="text-muted">
-		There are no rooms
-	</div>
-	<% end %>
+<div class="booyah-box col-12 col-md-3">
+	<%= render partial: 'chats' %>
 
 </div>
-
-
 
 <div class="col">
 	<div class="alert alert-primary">
 		<h4 class="alert-heading maintext">
-			Welcome to the Real Chat Apps!
+			Welcome to the My Chat Apps!
 		</h4>
 
 		<p class="maintext">
@@ -39,4 +21,5 @@
 			You can create or join a room from the sidebar.
 		</p>
 	</div>
+  </div>
 </div>
