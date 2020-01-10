@@ -10,7 +10,26 @@
   <div class="col">
     <div class="room">
       <% @chat_messages.each do |chat_message| %>
-        <%= chat_message %>
+      <div class="room-message-container">
+        <div class="row no-gutters">
+          <div class="col-auto text-center">
+          </div>
+
+          <div class="col">
+            <div class="message-content">
+              <p class="mb-1">
+                <%= chat_message.message %>
+              </p>
+
+              <div class="text-right">
+                <small>
+                  <%= chat_message.created_at %>
+                </small>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>      
       <% end %>
     </div>
 
@@ -23,7 +42,7 @@
                                    class: 'room-input'
                                  } %>
         <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary room-input' %>
+          <%= form.submit "Send", class: 'btn btn-dark room-send' %>
         </div>
       </div>
 

@@ -18,7 +18,7 @@
 
 .main{
 	margin-top: -100px;
-	
+
 }
 
 
@@ -73,19 +73,40 @@
 .room-input{
 	border-top: 0 none;
 	border-radius: 0 0 5px 5px;
+	border: 1px solid #A92233;
+}
+
+.room-send{
+	border-top: 0 none;
+	border-radius: 0 0 5px 5px;
+	border: 1px solid #A92233;
+	background-color: #A92233;
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+.room-send:hover{
+	cursor: pointer;
+	transition: all 0.2s linear;
+	background-color: #fff;
+	color: #A92233;
+	letter-spacing: 1px;
+
 }
 
 
 .chat-message-container{
 	padding: 5px;
+
 }
 
 .message-content{
 	padding: 5px;
-	border: 1px solid #000;
+	border: 1px solid #A92233;
 	border-radius: 5px;
-	background: gray;
-	color: #fff;
+	background: #FEFCF9;
+	color: #000;
+	margin: 5px;
 }
 
 
