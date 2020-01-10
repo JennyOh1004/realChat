@@ -8,6 +8,7 @@ class ChatMessagesController < ApplicationController
 										   message: params.dig(:chat_message, :message)
 	end
 
+
 	protected
 
 	def load_entities

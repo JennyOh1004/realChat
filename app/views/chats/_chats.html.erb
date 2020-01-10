@@ -1,25 +1,26 @@
-<br />
+<br/>
 <div class="row">
-<div class="booyah-box col-12 col-md-3 offset-1">
-	<br />
-
-	<% if @chats.present? %>
-	<nav class="nav flex-column">
-		<% @chats.each do |chat| %>
-		<%= link_to chat.name, chat_path(chat), class: 'nav-link room-nav-link' %>
-	<% end %>
-	</nav>
+  <div class="col-12 col-md-3">
+    <div class="mb-3">
 	
-	<% else %>
-	<div class="text-muted">
-		There are no rooms
-	</div>
-	<% end %>
-
-	<div class="mb-3">
-		<%= link_to new_chat_path, class: 'btn btn-dark button' do %>
+	<%= link_to new_chat_path, class: 'btn btn-primary button' do %>
 		Create a room
-		<% end %>
-	</div>
-
+	<% end %>
 </div>
+
+<% if @chats.present? %>
+<nav class="nav flex-column">
+	<% @chats.each do |chat| %>
+	<%= link_to chat.name, chat_path(chat), class: 'nav-link room-nav-link' %>
+ <% end %>
+</nav>
+<% else %>
+
+<div class="text-muted">
+	There are no rooms
+</div>
+<%end%>
+</div>
+</div>
+
+

@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :load_entities
+
 
 	def index
 		@chats = Chat.all
@@ -16,6 +17,9 @@ class ChatsController < ApplicationController
 
 	def show
 		@chat = Chat.find(params[:id])
+		@chat_message = ChatMessage.new chat: @chat
+		@chat_messages = @chat.chat_messages.includes(:user)
+	
 	end
 
 	def edit
@@ -38,11 +42,18 @@ class ChatsController < ApplicationController
 
 	private
 
-	
+
+
+	def load_entities
+		@chats = Chat.all
+		@chat = Chat.find(params[:id]) if params[:id]
+	end
 
 	def chat_params
 		params.require(:chat).permit(:name)
 	end
+
+
 end
 
 
