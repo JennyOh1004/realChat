@@ -6,6 +6,8 @@ class ChatMessagesController < ApplicationController
 		@chat_message = ChatMessage.create user: current_user,
 										   chat: @chat,
 										   message: params.dig(:chat_message, :message)
+	
+		ChatChannel.broadcast_to @chat, @chat_message 
 	end
 
 

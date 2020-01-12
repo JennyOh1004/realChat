@@ -8,11 +8,12 @@
   </div>
 
   <div class="col">
-    <div class="room">
+    <div class="room data-channel-subscribe="chat" data-chat-id="<%= @chat.id %>">
       <% @chat_messages.each do |chat_message| %>
       <div class="room-message-container">
         <div class="row no-gutters">
           <div class="col-auto text-center">
+            <img src="<%= chat_message.user.gravatar_url %>" class="avatar" alt="avatar">
           </div>
 
           <div class="col">
@@ -50,5 +51,37 @@
     <% end %>
   </div>
 </div>
+
+
+
+<div class="d-none" data-role="message-template">
+ <div class="room-message-container">
+  <div class="row no-gutters">
+    <div class="col-auto text-center">
+      <img src="" class="avatar" alt="avatar" data-role="user-avatar">
+    </div>
+
+    <div class="col">
+      <div class="message-content">
+        <p class="mb-1" data-role="message-text"></p>
+
+        <div class="text-right">
+          <small data-role="message-date"></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 

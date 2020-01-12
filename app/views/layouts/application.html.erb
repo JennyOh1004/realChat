@@ -13,12 +13,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
+         
 
-     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+     <nav class="navbar navbar-toggleable-md navbar-danger bg-danger">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <%= link_to 'MyChat', root_path, class: 'navbar-brand' %>
+
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -31,7 +33,7 @@
         </ul>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
-           <li class="nav-item">
+            <img class="avatar_sign" src="<%= current_user.gravatar_url %>">
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
            </li>
            <% else %>
@@ -42,6 +44,7 @@
             <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
            </li>
            <% end %>
+
          </ul>
       </div>
     </nav>
