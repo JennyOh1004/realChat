@@ -1,49 +1,77 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Pacifico&display=swap');
+
+
+.body{
+	font-family: 'Montserrat', sans-serif;	
+}
 
 .maintext{
 	letter-spacing: 1px;
 	font-size: 24px;
-	margin-left: 30%;
+	margin-left: 45%;
+	font-family: 'Montserrat', sans-serif;
 	
 }
 
 .text{
 	letter-spacing: 1px;
 	font-size: 19px;
-	color: #A92233;
-	margin-left: 30%;
-
-
+	color: #6403C4;
+	margin-left: 45%;
+	width: 80%;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .main{
-	margin-top: -150px;
+	margin-top: -35%;
 
 }
 
 
 .button{
-	background-color: #DF6357;
-	border-color: #DF6357;
-	color: #fff;
+	background-color: #fff;
+	border-color: #E0D8E7;
+	color: #6403C4;
 	letter-spacing: 2px;
-	width: 220px;
-	margin: 20px;
+	width: 200px;
+	margin: 30px;
+	padding: 20px;
 	margin-top: 80px;
-	font-size: 20px;
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .button:hover{
-	background-color: #fff;
-	border-color: #DF6357;
-	color: #DF6357;
-	letter-spacing: 1px;
+	background-color: #E0D8E7;
+	border-color: #fff;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+.navbar-custom {
+	background: linear-gradient(-45deg, #e73c7e, #8F23D5, #6403C4);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient{
+	0% {
+	background-position: 0% 50%;
+	}
+	50%{
+	background-position: 100% 50%;
+	}
+	100%{
+	background-position: 0% 50%;
+	}
 }
 
 .nav{
 	letter-spacing: 2px;
 	padding: 10px;
 	color: #fff;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .nav:hover{
@@ -54,8 +82,10 @@
 
 .nav-link {
 	letter-spacing: 2px;
-	padding: 10px;
+	padding: 15px;
 	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	margin-right: 10px;
 }
 
 .nav-link:hover{
@@ -68,7 +98,18 @@
 .navbar-brand{
 	letter-spacing: 1px;
 	padding: 5px;
-	color: #A92233;
+	color: #000;
+	font-family: 'Pacifico', cursive;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.navbar-brand:hover{
+	letter-spacing: 1px;
+	padding: 5px;
+	color: #fff;
+	transition: all .2s linear;
+	cursor: pointer;
 }
 
 
@@ -86,21 +127,21 @@
 	border: 1px solid #000;;
 	background: #FEFCF9;
 	height: 50vh;
-	border-radius: 5px;
+	border-radius: 1px;
 	overflow-y: auto;
 
 }
 
 .room-input{
 	border-top: 0 none;
-	border-radius: 5px;
+	border-radius: 1px;
 	border: 1px solid #000;
 	margin-top: 10px;
 }
 
 .room-send{
 	border-top: 0 none;
-	border-radius: 5px;
+	border-radius: 1px;
 	border: 1px solid #DF6357;
 	background-color: #DF6357;
 	color: #fff;
@@ -148,8 +189,32 @@
 	border-radius: 15px;
 	width: auto;
 	vertical-align: middle;
-	margin-top: 10px;
+	margin-top: 12px;
 	margin-left: 10px;
+	margin-right: 10px;
 }
+
+.vl{
+	border-left: 1px solid #E0D8E7;
+	height: 80vh;
+}
+
+.text-muted{
+	width: 300px;
+	letter-spacing: 2px;
+	color: #E0D8E7;
+	padding: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
 
 
