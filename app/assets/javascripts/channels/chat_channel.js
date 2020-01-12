@@ -8,7 +8,7 @@ $(function(){
 
 		App.cable.subscriptions.create(
 		{
-			channel: "RoomChannel",
+			channel: "ChatChannel",
 			chat: chat_id
 		},
 		{
