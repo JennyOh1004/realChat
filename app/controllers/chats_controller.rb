@@ -11,12 +11,17 @@ class ChatsController < ApplicationController
 	end
 
 	def create
-		current_user.chats.create(chat_params)
-		redirect_to root_path
-	end
+    	@chat = Chat.new permitted_parameters
+
+    if @chat.save
+      flash[:success] = "Chat room #{@chat.name} was created successfully"
+      redirect_to chats_path
+    else
+      render :new
+    end
+  end
 
 	def show
-		@chat = Chat.find(params[:id])
 		@chat_message = ChatMessage.new chat: @chat
 		@chat_messages = @chat.chat_messages.includes(:user)
 	
@@ -31,7 +36,7 @@ class ChatsController < ApplicationController
 	def update
 		@chat = Chat.find(params[:id])
 		@chat.update_attributes(chat_params)
-		redirect_to root_path
+		redirect_to chats_path
 	end
 
 	def destroy
@@ -40,7 +45,7 @@ class ChatsController < ApplicationController
 		redirect_to root_path
 	end
 
-	private
+	protected
 
 
 
@@ -49,11 +54,9 @@ class ChatsController < ApplicationController
 		@chat = Chat.find(params[:id]) if params[:id]
 	end
 
-	def chat_params
-		params.require(:chat).permit(:name)
-	end
-
-
+	def permitted_parameters
+   		params.require(:chat).permit(:name)
+  end
 end
 
 
