@@ -34,7 +34,7 @@
 	letter-spacing: 2px;
 	width: 200px;
 	padding: 20px;
-	margin-top: 50px;
+	margin-top: 5px;
 	font-size: 15px;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -45,6 +45,27 @@
 	color: #fff;
 	letter-spacing: 2px;
 }
+
+.button2{
+	float: left;
+	background-color: #fff;
+	border-color: #E0D8E7;
+	color: #6403C4;
+	letter-spacing: 2px;
+	width: 100px;
+	padding: 20px;
+	margin-top: 5px;
+	font-size: 13px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.button2:hover{
+	background-color: #E0D8E7;
+	border-color: #fff;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
 
 .navbar-custom {
 	background: linear-gradient(-45deg, #e73c7e, #8F23D5, #6403C4);
@@ -128,6 +149,7 @@
 	height: 50vh;
 	border-radius: 1px;
 	overflow-y: auto;
+	margin-top: 30px;
 
 }
 

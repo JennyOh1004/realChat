@@ -34,9 +34,8 @@ class ChatsController < ApplicationController
 
 
 	def update
-		@chat = Chat.find(params[:id])
-		@chat.update_attributes(chat_params)
-		redirect_to chats_path
+		@chat.update_attributes(permitted_parameters)
+		redirect_to root_path
 	end
 
 	def destroy
