@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :chat_messages
   resources :chats
+
+  get 'about', to: 'chats#about'
 end
