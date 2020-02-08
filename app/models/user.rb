@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :chat_messages,
-  			dependent: :destroy
+  			   dependent: :destroy
+           :chats
 
   def gravatar_url
   	gravatar_id = Digest::MD5::hexdigest(email).downcase

@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	before_action :load_entities
 
 
@@ -11,6 +12,7 @@ class ChatsController < ApplicationController
 	end
 
 	def create
+		current_user.chats.create(permitted_parameters)
     	@chat = Chat.new permitted_parameters
 
     if @chat.save
@@ -29,11 +31,13 @@ class ChatsController < ApplicationController
 
 	def edit
 		@chat = Chat.find(params[:id])
-		
+
 	end
 
 
 	def update
+		@chat = Chat.find(params[:id])
+
 		@chat.update_attributes(permitted_parameters)
 		redirect_to root_path
 	end
@@ -48,8 +52,7 @@ class ChatsController < ApplicationController
 
 	end
 
-	protected
-
+	private
 
 
 	def load_entities
