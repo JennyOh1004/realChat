@@ -4,12 +4,16 @@
 
 <div class="row">
   <div class="col-12 col-md-3">
-    <%= render partial: 'chats' %>
-  </div><div>
-  <%= link_to 'Edit', edit_chat_path(@chat), class: 'btn btn-primary button2' %>
+<%= link_to 'Edit', edit_chat_path(@chat), class: 'btn btn-primary button2' %>
+<%= link_to 'Destroy', chat_path(@chat), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger button2' %>
+</div>
+</div>
 
-  <%= link_to 'Destroy', chat_path(@chat), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger button2' %>
+<div class="row">
+  <div class="col-12 col-md-3">
+    <%= render partial: 'chats' %>
   </div>
+
 
   <div class="col">
     <div class="room data-channel-subscribe="chat" data-chat-id="<%= @chat.id %>">
