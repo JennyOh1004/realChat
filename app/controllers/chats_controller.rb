@@ -12,7 +12,6 @@ class ChatsController < ApplicationController
 	end
 
 	def create
-		current_user.chats.create(permitted_parameters)
     	@chat = Chat.new permitted_parameters
 
     if @chat.save
