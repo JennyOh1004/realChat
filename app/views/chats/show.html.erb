@@ -17,7 +17,7 @@
 
 
   <div class="col">
-    <div class="room data-channel-subscribe="chat" data-chat-id="<%= @chat.id %>">
+    <div class="room" data-channel-subscribe="chat" data-chat-id="<%= @chat.id %>">
       <% @chat_messages.each do |chat_message| %>
       <div class="room-message-container">
         <div class="row no-gutters">
@@ -64,7 +64,7 @@
 
 
 <div class="d-none" data-role="message-template">
- <div class="room-message-container">
+ <div class="chat-message-container">
   <div class="row no-gutters">
     <div class="col-auto text-center">
       <img src="" class="avatar" alt="avatar" data-role="user-avatar">

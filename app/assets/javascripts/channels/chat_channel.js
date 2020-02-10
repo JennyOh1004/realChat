@@ -2,7 +2,8 @@ $(function(){
 	$('[data-channel-subscribe="chat"]').each(function(index, element){
 		var $element = $(element),
 		chat_id = $element.data('chat-id')
-		messageTemplate = $('[data-role="message-template]');
+		messageTemplate = $('[data-role="message-template"]');
+
 
 		$element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000)
 
@@ -13,7 +14,9 @@ $(function(){
 		},
 		{
 			received: function(data){
+				console.log(data);
 				var content = messageTemplate.children().clone(true, true);
+				console.log(messageTemplate.children());
 				content.find('[data-role="user-avatar"]').attr('src', data.user_avatar_url);
 				content.find('[data-role="message-text"]').text(data.message);
 				content.find('[data-role="message-date"]').text(data.updated_at);

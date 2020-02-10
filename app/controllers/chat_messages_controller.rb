@@ -1,7 +1,6 @@
 class ChatMessagesController < ApplicationController
 	before_action :load_entities
 
-
 	def create
 		@chat_message = ChatMessage.create user: current_user,
 										   chat: @chat,
